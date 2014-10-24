@@ -1,6 +1,7 @@
 #!/bin/sh
 mv /tmp/tomcat/apache-tomcat-7.0.56 /opt/tomcat
-mv /tmp/zookeeper/zookeeper-3.4.6 /opt/zookeepermv /tmp/solr/solr-4.10.1 /opt/solr_install
+mv /tmp/zookeeper/zookeeper-3.4.6 /opt/zookeeper
+mv /tmp/solr/solr-4.10.1 /opt/solr_install
 cp -r /opt/solr_install/example/solr/* /opt/solr_home
 cp /opt/solr_install/dist/solr-*.war /opt/solr_home/war/solr.war
 rm -rf /opt/solr_home/collection1
