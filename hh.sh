@@ -17,3 +17,4 @@ chmod 755 /opt/tomcat/bin/startup.sh
 rm -rf /tmp/zookeeper/zookeeper-3.4.6
 mv /tmp/hhconfig/zoo.cfg /opt/zookeeper/conf/zoo.cfg
 /opt/zookeeper/bin/zkServer.sh start
+
