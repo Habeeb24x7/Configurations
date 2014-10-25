@@ -1,0 +1,1 @@
+http://xxxxxxxxxxxxx:8080/solr/admin/collections?action=CREATE&name=HH&numShards=3&replicationFactor=3&configName=myconfig&maxShardsPerNode=3
