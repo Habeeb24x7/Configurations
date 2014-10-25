@@ -10,7 +10,7 @@ cp /opt/solr_install/example/resources/log4j.properties /opt/tomcat/lib/
 /opt/tomcat/bin/startup.sh
 sleep 10s
 /opt/tomcat/bin/shutdown.sh
-mv /tmp/hhconfig/solr.xml /opt/tomcat/conf/Catalina/localhost/solr.xml
+#mv /tmp/hhconfig/solr.xml /opt/tomcat/conf/Catalina/localhost/solr.xml
 mv /tmp/hhconfig/startup.sh /opt/tomcat/bin/startup.sh
 chmod 755 /opt/tomcat/bin/startup.sh
 /opt/tomcat/bin/startup.sh
