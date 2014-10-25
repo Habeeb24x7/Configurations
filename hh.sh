@@ -10,11 +10,12 @@ cp /opt/solr_install/example/resources/log4j.properties /opt/tomcat/lib/
 /opt/tomcat/bin/startup.sh
 sleep 10s
 /opt/tomcat/bin/shutdown.sh
+mv /tmp/hhconfig/tc_solr.xml /opt/tomcat/conf/Catalina/localhost/solr.xml
 mv /tmp/hhconfig/solr.xml /opt/tomcat/conf/Catalina/localhost/solr.xml
 mv /tmp/hhconfig/startup.sh /opt/tomcat/bin/startup.sh
 chmod 755 /opt/tomcat/bin/startup.sh
+mv /tmp/hhconfig/zoo.cfg /opt/zookeeper/conf/zoo.cfg
 /opt/tomcat/bin/startup.sh
 rm -rf /tmp/zookeeper/zookeeper-3.4.6
-mv /tmp/hhconfig/zoo.cfg /opt/zookeeper/conf/zoo.cfg
 /opt/zookeeper/bin/zkServer.sh start
 
