@@ -27,5 +27,6 @@ if [ "$SOLR1" == 1 ]; then
   curl 'http://localhost:8080/solr/admin/collections?action=CREATE&name=Habeeb24x7&numShards=3&replicationFactor=3&collection.configName=myconfig&maxShardsPerNode=3'
   mv /tmp/hhconfig/post.sh /opt/solr_install/example/exampledocs/post.sh
   chmod 755 /opt/solr_install/example/exampledocs/post.sh
+  sleep 10s
   /opt/solr_install/example/exampledocs/post.sh /opt/solr_install/example/exampledocs/*.xml
 fi
