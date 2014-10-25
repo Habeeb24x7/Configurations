@@ -18,16 +18,12 @@ mv /tmp/hhconfig/zoo.cfg /opt/zookeeper/conf/zoo.cfg
 /opt/tomcat/bin/startup.sh
 rm -rf /tmp/zookeeper/zookeeper-3.4.6
 /opt/zookeeper/bin/zkServer.sh start
-
 SOLR1=$(head -1 /opt/zookeeper/tmp/myid)
 if [ "$SOLR1" == 1 ]; then
 #sleep 10s
 sed -i s/8983/8080/ /opt/solr_install/example/exampledocs/post.sh
-/opt/solr_install/example/scripts/cloud-scripts/zkcli.sh -zkhost 172.31.3.111:2181,172.31.3.112:2181,172.31.3.113:2181 -cmd upconfig -confdir /opt/solr_home/collection1/conf -confname myconfig
-sleep 20s
-curl 'http://localhost:8080/solr/admin/collections?action=CREATE&name=collection1&numShards=3&replicationFactor=3&collection.configName=myconfig&maxShardsPerNode=3'
-sleep 20s
-/opt/solr_install/example/scripts/cloud-scripts/zkcli.sh -zkhost 172.31.3.111:2181,172.31.3.112:2181,172.31.3.113:2181 -cmd upconfig -confdir /opt/solr_home/collection1/conf -confname myconfig
-sleep 20s
+/opt/solr_install/example/scripts/cloud-scripts/zkcli.sh -zkhost 172.31.3.111:2181,172.31.3.112:2181,172.31.3.113:2181 -cmd upconfig -confdir /opt/solr_install/example/solr/collection1/conf -confname myconfig
+sleep 10s
+#curl 'http://localhost:8080/solr/admin/collections?action=CREATE&name=HH&numShards=3&replicationFactor=3&collection.configName=myconfig&maxShardsPerNode=3'
 /opt/solr_install/example/exampledocs/post.sh /opt/solr_install/example/exampledocs/*.xml
 fi
